@@ -117,23 +117,11 @@
 
     const catColor = categoryColors[artifact.category] || { class: 'tag--ochre' };
 
-    // Image area
-    const hasRealImage = artifact.imageUrl && artifact.imageUrl.length > 0;
-    let imageHTML;
-    if (hasRealImage) {
-      imageHTML = `
-        <div class="artifact-card__image">
-          <img src="${artifact.imageUrl}" alt="${artifact.title}" loading="lazy" 
-               onerror="this.parentElement.innerHTML='<div class=\\'artifact-card__image-placeholder\\' style=\\'background: linear-gradient(135deg, ${period.color}, ${hexToRgba(period.color, 0.6)});\\'>${artifact.artForm}</div>'">
-        </div>`;
-    } else {
-      imageHTML = `
-        <div class="artifact-card__image">
-          <div class="artifact-card__image-placeholder" style="background: linear-gradient(135deg, ${period.color}, ${hexToRgba(period.color, 0.6)});">
-            ${artifact.artForm}
-          </div>
-        </div>`;
-    }
+    // Every artifact is backed by a checked local image asset.
+    const imageHTML = `
+      <div class="artifact-card__image">
+        <img src="${artifact.imageUrl}" alt="${artifact.title}" loading="lazy" data-asset="${artifact.id}">
+      </div>`;
 
     card.innerHTML = `
       ${imageHTML}
@@ -169,14 +157,8 @@
 
     const catColor = categoryColors[artifact.category] || { class: 'tag--ochre' };
 
-    // Image
-    const hasRealImage = artifact.imageUrl && artifact.imageUrl.length > 0;
-    if (hasRealImage) {
-      modalImage.innerHTML = `<img src="${artifact.imageUrl}" alt="${artifact.title}" 
-        onerror="this.parentElement.innerHTML='<div class=\\'modal__image-placeholder\\' style=\\'background: linear-gradient(135deg, ${period.color}, ${hexToRgba(period.color, 0.5)});\\'>${artifact.artForm}</div>'">`;
-    } else {
-      modalImage.innerHTML = `<div class="modal__image-placeholder" style="background: linear-gradient(135deg, ${period.color}, ${hexToRgba(period.color, 0.5)});">${artifact.artForm}</div>`;
-    }
+    // The modal uses the same verified local asset as the artifact card.
+    modalImage.innerHTML = `<img src="${artifact.imageUrl}" alt="${artifact.title}" data-asset="${artifact.id}">`;
     modalImage.style.background = `linear-gradient(135deg, ${period.color}, ${hexToRgba(period.color, 0.5)})`;
 
     // Tags

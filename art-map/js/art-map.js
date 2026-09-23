@@ -204,10 +204,13 @@
         card.setAttribute('tabindex', '0');
 
         card.innerHTML = `
+          <img class="loc-card__image" src="${loc.imageUrl}" alt="${loc.name}" loading="lazy" data-asset="${loc.id}">
+          <div class="loc-card__body">
           <h3 class="loc-card__name">${loc.name}</h3>
           <p class="loc-card__state">${loc.state} · ${loc.region}</p>
           <p class="loc-card__tradition">${loc.artTradition}</p>
           <button class="loc-card__more" data-id="${loc.id}">Learn More →</button>
+          </div>
         `;
 
         // Click to select on map
@@ -281,6 +284,13 @@
     `;
 
     let contentHTML = '';
+
+    contentHTML += `
+      <div class="location-modal__image">
+        <img src="${loc.imageUrl}" alt="${loc.name}" data-asset="${loc.id}">
+        <p class="text-caption">${loc.imageCredit}</p>
+      </div>
+    `;
 
     contentHTML += `
       <div class="modal__section">

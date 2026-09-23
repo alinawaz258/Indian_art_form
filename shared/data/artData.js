@@ -1,5 +1,5 @@
 /**
- * Indian Art Forms — CLA-I
+ * Indian Art Forms — Shared Data Layer
  * Shared Data Layer
  * 
  * This file contains the researched artifact and location data
@@ -136,7 +136,7 @@ const ART_DATA = {
       significance: "These paintings represent some of the earliest artistic traditions in India and demonstrate the cognitive and symbolic capabilities of prehistoric communities. The continuity of painting across millennia at this site is unparalleled.",
       sources: ["UNESCO World Heritage Centre — Rock Shelters of Bhimbetka", "Archaeological Survey of India", "Wakankar, V.S. — 'Bhimbetka: The Prehistoric Paradise', Pragdhara, 2005"],
       imageDescription: "Mesolithic rock painting showing stylized human figures with bows hunting deer and bison, painted in dark red ochre on natural rock surface",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Bhimbetka_Caves%2C_Madhya_Pradesh.jpg/1280px-Bhimbetka_Caves%2C_Madhya_Pradesh.jpg",
+      imageUrl: "../shared/assets/timeline/bhimbetka.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 4.0"
     },
     {
@@ -154,7 +154,7 @@ const ART_DATA = {
       significance: "The Edakkal petroglyphs are crucial evidence of prehistoric artistic and possibly proto-literate culture in South India, extending our understanding of early human creativity beyond the well-known northern sites.",
       sources: ["Archaeological Survey of India", "Kerala State Archaeology Department", "Fawcett, F. — Notes on the Rock Carvings in the Edakal Cave, Wynaad, 1901"],
       imageDescription: "Neolithic petroglyphs carved into rock showing human figures and geometric symbols",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/An_Edakkal_Carving.jpg/800px-An_Edakkal_Carving.jpg",
+      imageUrl: "../shared/assets/timeline/edakkal.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 3.0"
     },
 
@@ -174,7 +174,7 @@ const ART_DATA = {
       significance: "The Dancing Girl is a masterpiece of early bronze casting and one of the oldest known examples of the lost-wax technique in South Asia. It demonstrates that the Indus Valley artisans possessed both technical expertise and a naturalistic artistic sensibility that was far ahead of many contemporary civilizations.",
       sources: ["National Museum, New Delhi", "Marshall, John — Mohenjo-daro and the Indus Civilization, 1931", "Archaeological Survey of India"],
       imageDescription: "Small bronze figurine of a young woman standing in a relaxed pose with one hand on hip, wearing bangles",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Dancing_girl_of_Mohenjo-daro.jpg/800px-Dancing_girl_of_Mohenjo-daro.jpg",
+      imageUrl: "../shared/assets/timeline/dancing-girl.jpg",
       imageCredit: "Wikimedia Commons, Public Domain"
     },
     {
@@ -192,7 +192,7 @@ const ART_DATA = {
       significance: "The Pashupati Seal is one of the most discussed artifacts in Indian archaeology due to its possible connection to later Hindu iconography. Whether or not the figure represents a proto-Shiva, the seal demonstrates sophisticated artistic composition and symbolic representation in the Indus Valley Civilization.",
       sources: ["National Museum, New Delhi", "Marshall, John — Mohenjo-daro and the Indus Civilization, 1931", "Possehl, G.L. — The Indus Civilization: A Contemporary Perspective, 2002"],
       imageDescription: "Square steatite seal showing seated cross-legged figure with horned headdress surrounded by animals",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shiva_Pashupati.jpg/800px-Shiva_Pashupati.jpg",
+      imageUrl: "../shared/assets/timeline/pashupati.jpg",
       imageCredit: "Wikimedia Commons, Public Domain"
     },
     {
@@ -210,7 +210,7 @@ const ART_DATA = {
       significance: "As one of the rare stone portrait sculptures from the Indus Valley, the Priest-King provides valuable insight into the personal adornment, textiles, and possibly the social hierarchy of Harappan civilization. The sophistication of the carving suggests a mature sculptural tradition.",
       sources: ["National Museum of Pakistan, Karachi", "Marshall, John — Mohenjo-daro and the Indus Civilization, 1931"],
       imageDescription: "Limestone bust of bearded figure wearing ornate robe with trefoil pattern and decorated headband",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mohenjo-daro_Priesterk%C3%B6nig.jpeg/800px-Mohenjo-daro_Priesterk%C3%B6nig.jpeg",
+      imageUrl: "../shared/assets/timeline/priest-king.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 3.0"
     },
 
@@ -230,7 +230,7 @@ const ART_DATA = {
       significance: "The Lion Capital is adopted as the national emblem of India, and the dharma chakra from its abacus features on the Indian national flag. It represents the pinnacle of Mauryan sculptural achievement and remains one of the most recognized symbols of Indian civilization.",
       sources: ["Archaeological Survey of India — Sarnath Museum", "National Museum, New Delhi", "Indian Ministry of Culture"],
       imageDescription: "Four Asiatic lions standing back to back atop a circular abacus with a wheel motif, carved in polished sandstone",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Ashokan_Pillar_at_Vaishali%2C_Bihar%2C_India.jpg/800px-Ashokan_Pillar_at_Vaishali%2C_Bihar%2C_India.jpg",
+      imageUrl: "../shared/assets/timeline/ashoka-lion.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 4.0"
     },
     {
@@ -248,7 +248,7 @@ const ART_DATA = {
       significance: "The Didarganj Yakshi exemplifies the mastery of stone polishing techniques in ancient India and represents an ideal of female beauty in Indian sculpture. Its extraordinary surface finish and naturalistic modelling make it one of the most admired sculptures in Indian art history.",
       sources: ["Patna Museum, Bihar", "Huntington, Susan L. — The Art of Ancient India, 1985", "Archaeological Survey of India"],
       imageDescription: "Life-sized polished sandstone female figure holding a fly-whisk, with elaborate ornaments and flowing drapery",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Didarganj_Yakshi%2C_Indian_Museum%2C_Kolkata.jpg/800px-Didarganj_Yakshi%2C_Indian_Museum%2C_Kolkata.jpg",
+      imageUrl: "../shared/assets/timeline/didarganj.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 4.0"
     },
 
@@ -268,7 +268,7 @@ const ART_DATA = {
       significance: "The Gandhara school is historically significant as one of the first traditions to depict the Buddha in human form. Its synthesis of Classical Western and Indian elements created an influential artistic vocabulary that spread along the Silk Road to Central and East Asia.",
       sources: ["Metropolitan Museum of Art, New York", "British Museum, London", "Boardman, John — The Diffusion of Classical Art in Antiquity, 1994"],
       imageDescription: "Grey schist standing Buddha with wavy hair, draped robes with naturalistic folds, and a serene expression",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Gandhara_Buddha_%28tnm%29.jpeg/800px-Gandhara_Buddha_%28tnm%29.jpeg",
+      imageUrl: "../shared/assets/timeline/gandhara-buddha.jpg",
       imageCredit: "Wikimedia Commons, Public Domain"
     },
     {
@@ -286,7 +286,7 @@ const ART_DATA = {
       significance: "The Mathura school represents the indigenous Indian approach to depicting the Buddha and established conventions — such as the thin, body-revealing robe and the wheel marks on palms and soles — that would become standard in later Indian Buddhist art. The contrast with Gandhara illustrates how the same religious subject was interpreted through different cultural lenses.",
       sources: ["Government Museum, Mathura", "National Museum, New Delhi", "Rosenfield, John M. — The Dynastic Arts of the Kushans, 1967"],
       imageDescription: "Red sandstone standing Buddha with sheer clinging robe, halo behind head, and robust physique in Indian style",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/MathuraBuddha.jpg/800px-MathuraBuddha.jpg",
+      imageUrl: "../shared/assets/timeline/mathura-buddha.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 3.0"
     },
 
@@ -306,7 +306,7 @@ const ART_DATA = {
       significance: "The Padmapani painting is widely considered one of the greatest masterpieces of ancient Indian art and among the finest examples of Buddhist painting anywhere in the world. It demonstrates the sophistication of the Indian painting tradition at its classical peak and has influenced art historical understanding of ancient Indian aesthetics. The Ajanta Caves are a UNESCO World Heritage Site (1983).",
       sources: ["UNESCO World Heritage Centre — Ajanta Caves", "Archaeological Survey of India", "Spink, Walter — Ajanta: History and Development, 2005-2014 (7 volumes)"],
       imageDescription: "Mural painting of serene Bodhisattva figure with jewelled crown holding a blue lotus, with subtle shading and expressive eyes",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Ajanta_Padmapani.jpg/800px-Ajanta_Padmapani.jpg",
+      imageUrl: "../shared/assets/timeline/ajanta.jpg",
       imageCredit: "Wikimedia Commons, Public Domain"
     },
     {
@@ -324,7 +324,7 @@ const ART_DATA = {
       significance: "This sculpture is considered the quintessential example of Gupta-period Buddhist sculpture and has become the defining image of the mature Indian classical style. Its influence extended across South and Southeast Asia, shaping Buddhist art traditions from Sri Lanka to Indonesia.",
       sources: ["Sarnath Museum, Archaeological Survey of India", "Huntington, Susan L. — The Art of Ancient India, 1985", "National Museum, New Delhi"],
       imageDescription: "Sandstone seated Buddha in teaching gesture with serene downcast eyes, transparent robe, and elaborately carved halo",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg/800px-Buddha_in_Sarnath_Museum_%28Dhammajak_Mutra%29.jpg",
+      imageUrl: "../shared/assets/timeline/sarnath.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 3.0"
     },
 
@@ -344,7 +344,7 @@ const ART_DATA = {
       significance: "The Chola Nataraja is one of the most recognizable and philosophically rich images in world art. It has been described by art historians and physicists alike as a profound visual metaphor for cosmic cycles. Ananda Coomaraswamy's essay 'The Dance of Shiva' (1918) helped introduce this image to Western audiences.",
       sources: ["National Museum, New Delhi", "Metropolitan Museum of Art, New York", "Coomaraswamy, Ananda K. — The Dance of Shiva, 1918", "Nagaswamy, R. — Masterpieces of Early South Indian Bronzes, 1983"],
       imageDescription: "Bronze figure of Shiva dancing within a ring of fire, with four arms holding drum and flame, one foot on a dwarf figure",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/WLANL_-_Pachango_-_Tropenmuseum_-_Shiva_Nataraja.jpg/800px-WLANL_-_Pachango_-_Tropenmuseum_-_Shiva_Nataraja.jpg",
+      imageUrl: "../shared/assets/timeline/nataraja.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 2.0"
     },
     {
@@ -362,7 +362,7 @@ const ART_DATA = {
       significance: "Khajuraho represents one of the high points of medieval Indian temple sculpture. The site demonstrates the integration of architecture, sculpture, and religious symbolism in Indian art. UNESCO designated it a World Heritage Site in 1986.",
       sources: ["UNESCO World Heritage Centre — Khajuraho Group of Monuments", "Archaeological Survey of India", "Desai, Devangana — The Religious Imagery of Khajuraho, 1996"],
       imageDescription: "Intricately carved sandstone celestial female figure in a graceful pose on temple exterior with detailed ornaments",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/India-5626_-_Khajuraho_Temple_%282197096498%29.jpg/800px-India-5626_-_Khajuraho_Temple_%282197096498%29.jpg",
+      imageUrl: "../shared/assets/timeline/khajuraho.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 2.0"
     },
     {
@@ -380,7 +380,7 @@ const ART_DATA = {
       significance: "The Konark Sun Temple is a UNESCO World Heritage Site (1984) and is considered one of the finest examples of Kalinga architecture. The chariot wheels have become an iconic symbol of Odisha and of Indian artistic and scientific achievement. The temple demonstrates how Indian artisans integrated functional knowledge (astronomy/timekeeping) into artistic expression.",
       sources: ["UNESCO World Heritage Centre — Sun Temple, Konark", "Archaeological Survey of India", "Mitra, Debala — Konark, 1968"],
       imageDescription: "Massive stone wheel with intricate carvings of geometric and floral patterns, part of the Sun Temple's chariot design",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Konark_Sun_Temple_Wheel.jpg/1280px-Konark_Sun_Temple_Wheel.jpg",
+      imageUrl: "../shared/assets/timeline/konark.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 3.0"
     },
 
@@ -400,7 +400,7 @@ const ART_DATA = {
       significance: "The Hamzanama project is historically significant as the crucible in which the Mughal painting school was forged. The integration of Persian compositional sophistication with Indian colour sense and naturalistic observation established the foundations of Mughal miniature painting that would flourish for the next two centuries.",
       sources: ["Victoria & Albert Museum, London", "MAK — Museum of Applied Arts, Vienna", "Beach, Milo Cleveland — The Imperial Image: Paintings for the Mughal Court, 1981"],
       imageDescription: "Large-format painting on cotton showing a dynamic narrative scene with vivid colors, Persian composition, and Indian naturalism",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Hamzanama.jpg/800px-Hamzanama.jpg",
+      imageUrl: "../shared/assets/timeline/hamzanama.jpg",
       imageCredit: "Wikimedia Commons, Public Domain"
     },
     {
@@ -418,7 +418,7 @@ const ART_DATA = {
       significance: "This painting is a masterwork of Mughal allegorical art and exemplifies the cross-cultural artistic exchange during the Mughal period. It demonstrates the Mughal artists' ability to absorb European techniques (perspective, chiaroscuro) while maintaining their own artistic identity and political messaging.",
       sources: ["Freer Gallery of Art, Smithsonian Institution", "Koch, Ebba — Mughal Art and Imperial Ideology, 2001", "Beach, Milo Cleveland — The Grand Mogul, 1978"],
       imageDescription: "Mughal miniature showing emperor on ornate hourglass throne with halo, handing book to a saint while kings wait below",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bichitr_-_Jahangir_preferring_a_sufi_sheikh_to_kings.jpg/800px-Bichitr_-_Jahangir_preferring_a_sufi_sheikh_to_kings.jpg",
+      imageUrl: "../shared/assets/timeline/jahangir.jpg",
       imageCredit: "Wikimedia Commons, Public Domain — Freer Gallery of Art"
     },
     {
@@ -436,7 +436,7 @@ const ART_DATA = {
       significance: "The Taj Mahal's pietra dura represents one of the finest examples of cross-cultural artistic synthesis in Indian art — an Italian technique perfected and transformed by Mughal artisans into something entirely original. The craftsmanship demonstrates the extraordinary level of artistic patronage under Shah Jahan. The Taj Mahal is a UNESCO World Heritage Site (1983).",
       sources: ["UNESCO World Heritage Centre — Taj Mahal", "Archaeological Survey of India", "Koch, Ebba — The Complete Taj Mahal, 2006"],
       imageDescription: "Close-up of intricate floral patterns inlaid with semi-precious stones in white marble, showing naturalistic flowers and leaves",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pietra_dura_at_the_Taj_Mahal.jpg/800px-Pietra_dura_at_the_Taj_Mahal.jpg",
+      imageUrl: "../shared/assets/timeline/pietra-dura.jpg",
       imageCredit: "Wikimedia Commons, CC BY-SA 3.0"
     },
 
@@ -456,7 +456,7 @@ const ART_DATA = {
       significance: "Bani Thani has been described as India's 'Mona Lisa' for its iconic status in Indian art. The painting exemplifies the distinctive regional character of Rajput painting schools and demonstrates how individual courts developed unique stylistic identities. It has become one of the most reproduced images in Indian art.",
       sources: ["National Museum, New Delhi", "Dickinson, Eric and Khandalavala, Karl — Kishangarh Painting, 1959", "Government of India — commemorative postage stamp series"],
       imageDescription: "Profile portrait of elegant woman with elongated face, arched brow, lotus-shaped eye, and pointed chin wearing ornate jewellery",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Bani_Thani.jpg/800px-Bani_Thani.jpg",
+      imageUrl: "../shared/assets/timeline/bani-thani.jpg",
       imageCredit: "Wikimedia Commons, Public Domain"
     },
     {
@@ -474,7 +474,7 @@ const ART_DATA = {
       significance: "Kangra painting represents the lyrical peak of the Pahari painting tradition and one of the most refined expressions of devotional art in India. Its integration of landscape, emotion, and poetic content set it apart from other Indian painting schools and demonstrated that Indian miniature painting could achieve atmospheric and emotional effects comparable to the finest painting traditions worldwide.",
       sources: ["National Museum, New Delhi", "Randhawa, M.S. — Kangra Paintings on Love, 1962", "Archer, W.G. — Indian Paintings from the Punjab Hills, 1973"],
       imageDescription: "Lyrical miniature painting of Radha and Krishna in a lush green grove with flowering trees and a moonlit sky",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Radha_and_Krishna_in_the_Grove.jpg/800px-Radha_and_Krishna_in_the_Grove.jpg",
+      imageUrl: "../shared/assets/timeline/kangra.jpg",
       imageCredit: "Wikimedia Commons, Public Domain"
     },
 
@@ -494,7 +494,7 @@ const ART_DATA = {
       significance: "Bharat Mata became one of the most influential images of the Indian nationalist movement. The painting represents a pivotal moment when Indian artists consciously rejected colonial artistic frameworks to create art that was both modern and rooted in Indian traditions. The Bengal School that Abanindranath founded profoundly influenced 20th-century Indian art.",
       sources: ["Victoria Memorial Hall, Kolkata", "National Gallery of Modern Art, New Delhi", "Guha-Thakurta, Tapati — The Making of a New 'Indian' Art, 1992"],
       imageDescription: "Four-armed woman draped in saffron cloth holding paddy, white cloth, book, and prayer beads, painted in wash technique",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Bharat_Mata_by_Abanindranath_Tagore.jpg/800px-Bharat_Mata_by_Abanindranath_Tagore.jpg",
+      imageUrl: "../shared/assets/timeline/bharat-mata.jpg",
       imageCredit: "Wikimedia Commons, Public Domain"
     },
     {
@@ -508,11 +508,11 @@ const ART_DATA = {
       artForm: "Poster Art / Tempera",
       category: "Painting",
       description: "A series of posters created by Nandalal Bose for the 1938 Indian National Congress session at Haripura, Gujarat. Commissioned by Mahatma Gandhi, the posters depicted scenes of everyday Indian rural life — farmers, potters, weavers, fishermen — in a bold, stylized manner using a limited palette and strong graphic forms.",
-      historicalContext: "Nandalal Bose (1882–1966) was Abanindranath Tagore's most distinguished student and later the principal of Kala Bhavana at Shantiniketan. Gandhi specifically chose Nandalal for the Haripura posters to visualize his vision of Indian self-reliance (swadeshi). The posters were created using natural pigments and simple materials, embodying the ideals of simplicity and dignity of labour.",
+      historicalContext: "Nandalal Bose (1882–1966) was Abanindranath Tagore's most distinguished artistic heir and later the principal of Kala Bhavana at Shantiniketan. Gandhi specifically chose Nandalal for the Haripura posters to visualize his vision of Indian self-reliance (swadeshi). The posters were created using natural pigments and simple materials, embodying the ideals of simplicity and dignity of labour.",
       significance: "The Haripura posters represent a landmark in Indian art where fine art served a national purpose. They demonstrate how modern Indian artists engaged with the independence movement and Gandhian philosophy. Nandalal Bose also illustrated the original copy of the Constitution of India (1950), further cementing the relationship between art and nation-building.",
       sources: ["National Gallery of Modern Art, New Delhi", "Kala Bhavana, Visva-Bharati University, Shantiniketan", "Mitter, Partha — Art and Nationalism in Colonial India, 1994"],
       imageDescription: "Bold poster showing an Indian farmer carrying a plough, rendered in a simplified style with strong outlines and limited colors",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Nandalal_Bose_-_Haripura_Poster.jpg/800px-Nandalal_Bose_-_Haripura_Poster.jpg",
+      imageUrl: "../shared/assets/timeline/nandalal.jpg",
       imageCredit: "Wikimedia Commons, Public Domain"
     },
     {
@@ -530,8 +530,8 @@ const ART_DATA = {
       significance: "Sher-Gil is often considered the pioneer of modern Indian art alongside the Bengal School. Her work demonstrated that engagement with Western modernism could produce art that was authentically Indian rather than merely derivative. The Government of India declared her works as 'National Art Treasures', prohibiting their export.",
       sources: ["National Gallery of Modern Art, New Delhi", "Sundaram, Vivan — Amrita Sher-Gil: A Self-Portrait in Letters and Writings, 2010", "Government of India, Ministry of Culture"],
       imageDescription: "Oil painting of three young Indian women with solemn faces in earthy tones, combining Post-Impressionist style with Indian subject matter",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/en/2/20/Three_Girls_by_Amrita_Sher-Gil.jpg",
-      imageCredit: "National Gallery of Modern Art, New Delhi / Fair Use"
+      imageUrl: "../shared/assets/timeline/amrita.jpg",
+      imageCredit: "Wikimedia Commons, CC BY-SA 4.0 — Amrita Sher-Gil, Group of Three Girls"
     },
 
     // --- CONTEMPORARY ---
@@ -550,8 +550,8 @@ const ART_DATA = {
       significance: "Husain became the most internationally recognized Indian artist of the 20th century, sometimes referred to as the 'Picasso of India'. His horse paintings demonstrate how modern Indian artists could create work that was globally relevant while remaining connected to Indian visual culture. The Progressive Artists' Group fundamentally shaped the trajectory of post-independence Indian art.",
       sources: ["National Gallery of Modern Art, New Delhi", "Herwitz, Daniel — Husain's Raj, 2007", "Dalmia, Yashodhara — The Making of Modern Indian Art: The Progressives, 2001"],
       imageDescription: "Bold expressionist painting of horses in dynamic movement with energetic brushstrokes and vivid colors",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/14/Maqbool_Fida_Husain_painting.jpg",
-      imageCredit: "National Gallery of Modern Art / Fair Use"
+      imageUrl: "../shared/assets/timeline/husain.jpg",
+      imageCredit: "Wikimedia Commons, public display image — M. F. Husain, Horse with a bouquet"
     },
     {
       id: "raza-bindu",
@@ -568,8 +568,8 @@ const ART_DATA = {
       significance: "Raza's work demonstrates how Indian artists engaged with global abstraction while drawing on deep indigenous philosophical traditions. 'Saurashtra' became the most expensive modern Indian painting when it sold for ₹16.42 crore at Christie's in 2010, reflecting the growing international recognition of modern Indian art.",
       sources: ["National Gallery of Modern Art, New Delhi", "Christie's Auction House", "Raza Foundation, New Delhi", "Bartholomew, Richard — S.H. Raza, 1997"],
       imageDescription: "Large abstract painting with bold geometric forms in vivid primary colors centered around circular and rectangular shapes",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/f6/Saurashtra_by_SH_Raza.jpg",
-      imageCredit: "National Gallery of Modern Art / Fair Use"
+      imageUrl: "../shared/assets/timeline/raza.jpg",
+      imageCredit: "Wikimedia Commons, Composition by S. H. Raza"
     },
     {
       id: "tyeb-mehta-mahishasura",
@@ -586,8 +586,8 @@ const ART_DATA = {
       significance: "This painting demonstrates how contemporary Indian artists re-engaged with mythological themes through a modernist visual language. It represents a significant strand in post-independence Indian art that neither rejected tradition nor merely illustrated it, but transformed it into something contemporary and universal.",
       sources: ["Christie's Auction Records", "National Gallery of Modern Art, New Delhi", "Hoskote, Ranjit — Tyeb Mehta: Ideas Images Exchanges, 2005"],
       imageDescription: "Bold painting with flat planes of vivid vermilion and other colors depicting abstracted mythological battle with strong diagonal composition",
-      imageUrl: "",
-      imageCredit: "Private Collection"
+      imageUrl: "../shared/assets/timeline/tyeb.jpg",
+      imageCredit: "Wikimedia Commons, Mahishasura by Tyeb Mehta"
     }
   ],
 
@@ -605,7 +605,9 @@ const ART_DATA = {
       artMovement: "Prehistoric cave painting and rock art tradition of Central India",
       motifs: "Hunting scenes, animals (bison, deer, elephants, horses), communal dances, geometric patterns",
       artists: "Anonymous prehistoric communities",
-      sources: ["UNESCO World Heritage Centre", "Archaeological Survey of India"]
+      sources: ["UNESCO World Heritage Centre", "Archaeological Survey of India"],
+      imageUrl: "../shared/assets/timeline/bhimbetka.jpg",
+      imageCredit: "Wikimedia Commons, Bhimbetka Caves, Madhya Pradesh"
     },
     {
       id: "ajanta",
@@ -619,7 +621,9 @@ const ART_DATA = {
       artMovement: "Classical Indian Buddhist painting tradition — the Ajanta style influenced art across Asia",
       motifs: "Jataka tales, Buddha's life, bodhisattvas, celestial beings, court scenes, floral patterns, animals",
       artists: "Anonymous court-sponsored artists of the Vakataka dynasty",
-      sources: ["UNESCO World Heritage Centre", "Archaeological Survey of India", "Spink, Walter — Ajanta: History and Development"]
+      sources: ["UNESCO World Heritage Centre", "Archaeological Survey of India", "Spink, Walter — Ajanta: History and Development"],
+      imageUrl: "../shared/assets/timeline/ajanta.jpg",
+      imageCredit: "Wikimedia Commons, Ajanta Padmapani"
     },
     {
       id: "mahabalipuram",
@@ -633,7 +637,9 @@ const ART_DATA = {
       artMovement: "Pallava art — transitional between early rock-cut and later structural temple architecture of South India",
       motifs: "Mythological narratives, divine and semi-divine figures, animals (particularly elephants), architectural rathas (chariot-shaped temples)",
       artists: "Pallava court sculptors",
-      sources: ["UNESCO World Heritage Centre", "Archaeological Survey of India"]
+      sources: ["UNESCO World Heritage Centre", "Archaeological Survey of India"],
+      imageUrl: "../shared/assets/map/mahabalipuram.jpg",
+      imageCredit: "Wikimedia Commons, sculptures at Mahabalipuram"
     },
     {
       id: "thanjavur",
@@ -647,7 +653,9 @@ const ART_DATA = {
       artMovement: "Chola bronze-casting tradition; Tanjore painting school",
       motifs: "Hindu deities (Nataraja, Vishnu, Lakshmi), devotional subjects, gold-leaf embellishment, rich colours",
       artists: "Chola bronze-casters (sthapatis); Tanjore painters (traditional community of artists)",
-      sources: ["UNESCO World Heritage Centre — Brihadeeswarar Temple", "Government Museum, Chennai", "National Museum, New Delhi"]
+      sources: ["UNESCO World Heritage Centre — Brihadeeswarar Temple", "Government Museum, Chennai", "National Museum, New Delhi"],
+      imageUrl: "../shared/assets/timeline/nataraja.jpg",
+      imageCredit: "Wikimedia Commons, Chola Nataraja"
     },
     {
       id: "jaipur",
@@ -661,7 +669,9 @@ const ART_DATA = {
       artMovement: "Jaipur sub-school of Rajput painting; broader Rajasthani miniature painting tradition",
       motifs: "Court scenes, Ragamala (musical modes), Krishna Lila, hunting, festivals, bold primary colours",
       artists: "Court painters of the Kachhwaha dynasty",
-      sources: ["Albert Hall Museum, Jaipur", "National Museum, New Delhi"]
+      sources: ["Albert Hall Museum, Jaipur", "National Museum, New Delhi"],
+      imageUrl: "../shared/assets/timeline/bani-thani.jpg",
+      imageCredit: "Wikimedia Commons, Bani Thani painting"
     },
     {
       id: "kishangarh",
@@ -675,7 +685,9 @@ const ART_DATA = {
       artMovement: "Kishangarh sub-school of Rajput painting",
       motifs: "Radha-Krishna themes, elongated profiles, idealized beauty, Rajasthani landscapes, devotional poetry",
       artists: "Nihâl Chand, court painters of the Kishangarh court",
-      sources: ["National Museum, New Delhi", "Dickinson & Khandalavala — Kishangarh Painting, 1959"]
+      sources: ["National Museum, New Delhi", "Dickinson & Khandalavala — Kishangarh Painting, 1959"],
+      imageUrl: "../shared/assets/timeline/bani-thani.jpg",
+      imageCredit: "Wikimedia Commons, Bani Thani painting"
     },
     {
       id: "kangra",
@@ -689,7 +701,9 @@ const ART_DATA = {
       artMovement: "Pahari painting tradition — Kangra school",
       motifs: "Radha-Krishna, Gita Govinda, nayika-nayaka (lover themes), lush green landscapes, flowering trees, moonlit nights",
       artists: "Nainsukh family of painters; Purkhu; Kushala",
-      sources: ["National Museum, New Delhi", "Archer, W.G. — Indian Paintings from the Punjab Hills, 1973", "Randhawa, M.S. — Kangra Paintings on Love, 1962"]
+      sources: ["National Museum, New Delhi", "Archer, W.G. — Indian Paintings from the Punjab Hills, 1973", "Randhawa, M.S. — Kangra Paintings on Love, 1962"],
+      imageUrl: "../shared/assets/timeline/kangra.jpg",
+      imageCredit: "Wikimedia Commons, Kangra School of Art"
     },
     {
       id: "madhubani",
@@ -703,7 +717,9 @@ const ART_DATA = {
       artMovement: "Mithila/Madhubani painting tradition — from domestic ritual art to internationally recognized folk art form",
       motifs: "Geometric borders, lotus, fish, peacocks, sun and moon, Radha-Krishna, wedding scenes, tree of life, fertility symbols",
       artists: "Sita Devi, Jagdamba Devi, Ganga Devi, Baua Devi — women artists who brought the tradition to national and international recognition",
-      sources: ["Mithila Museum, Niigata, Japan", "National Handicrafts and Handlooms Museum, New Delhi", "Government of Bihar — GI Tag for Madhubani Painting"]
+      sources: ["Mithila Museum, Niigata, Japan", "National Handicrafts and Handlooms Museum, New Delhi", "Government of Bihar — GI Tag for Madhubani Painting"],
+      imageUrl: "../fusion/artwork/madhubani-gond-fusion.jpg",
+      imageCredit: "Kalāvṛtta archive, Vriksha-Chaitanya concept artwork"
     },
     {
       id: "puri-raghurajpur",
@@ -717,7 +733,9 @@ const ART_DATA = {
       artMovement: "Odia Pattachitra tradition — temple-connected narrative painting",
       motifs: "Jagannath, Krishna Lila, Dasavatara (ten incarnations of Vishnu), Tree of Life, elaborate borders (katha)",
       artists: "Traditional chitrakar families of Raghurajpur; Ananta Maharana (Padma Shri awardee)",
-      sources: ["Odisha State Museum", "Government of India — GI Tag", "Raghurajpur Heritage Village, Government of Odisha"]
+      sources: ["Odisha State Museum", "Government of India — GI Tag", "Raghurajpur Heritage Village, Government of Odisha"],
+      imageUrl: "../shared/assets/map/pattachitra.jpg",
+      imageCredit: "Wikimedia Commons, Pattachitra painting"
     },
     {
       id: "warli-region",
@@ -731,7 +749,9 @@ const ART_DATA = {
       artMovement: "Warli tribal art tradition — from ritual wall painting to contemporary art",
       motifs: "Tarpa dance (spiraling circle dance), human figures (two triangles joined at the tip), farming, wedding processions, animals, trees of life",
       artists: "Jivya Soma Mashe (Padma Shri, 2011), Balu Dumada, contemporary Warli artists",
-      sources: ["Tribal Cultural Centre, Mumbai", "Chemould Prescott Road Gallery", "Government of Maharashtra"]
+      sources: ["Tribal Cultural Centre, Mumbai", "Chemould Prescott Road Gallery", "Government of Maharashtra"],
+      imageUrl: "../shared/assets/map/warli.jpg",
+      imageCredit: "Wikimedia Commons, Warli painting"
     },
     {
       id: "srikalahasti",
@@ -745,7 +765,9 @@ const ART_DATA = {
       artMovement: "Kalamkari — hand-painted and block-printed textile art tradition of Andhra Pradesh",
       motifs: "Epic narratives (Ramayana, Mahabharata), temple chariot motifs, Tree of Life, floral scrollwork, Nandi, peacock",
       artists: "Traditional Kalamkari artisan families; efforts at revival by All India Handicrafts Board",
-      sources: ["Calico Museum of Textiles, Ahmedabad", "Government of India — GI Tag for Srikalahasti Kalamkari", "National Institute of Design"]
+      sources: ["Calico Museum of Textiles, Ahmedabad", "Government of India — GI Tag for Srikalahasti Kalamkari", "National Institute of Design"],
+      imageUrl: "../shared/assets/map/kalamkari.jpg",
+      imageCredit: "Wikimedia Commons, Kalamkari painting"
     },
     {
       id: "gond-region",
@@ -759,7 +781,9 @@ const ART_DATA = {
       artMovement: "Modern Gond art movement — from tribal visual language to contemporary Indian art",
       motifs: "Animals (especially birds, fish, deer), trees, dots-and-lines patterning, nature spirits, cosmological themes",
       artists: "Jangarh Singh Shyam, Bhajju Shyam (author of 'The London Jungle Book'), Durga Bai, Venkat Raman Singh Shyam",
-      sources: ["Bharat Bhavan, Bhopal", "Museum of Art & Photography, Bangalore", "Tara Books, Chennai"]
+      sources: ["Bharat Bhavan, Bhopal", "Museum of Art & Photography, Bangalore", "Tara Books, Chennai"],
+      imageUrl: "../shared/assets/map/gond.jpg",
+      imageCredit: "Wikimedia Commons, Gond painting"
     },
     {
       id: "shantiniketan",
@@ -773,7 +797,9 @@ const ART_DATA = {
       artMovement: "Bengal School of Art → Contextual Modernism (Shantiniketan school)",
       motifs: "Rural Indian life, nature, mythology, social themes, Japanese wash techniques, muralism",
       artists: "Nandalal Bose, Rabindranath Tagore, Benode Behari Mukherjee, Ramkinkar Baij, K.G. Subramanyan",
-      sources: ["Kala Bhavana, Visva-Bharati University", "National Gallery of Modern Art, New Delhi", "UNESCO — Shantiniketan inscribed 2023"]
+      sources: ["Kala Bhavana, Visva-Bharati University", "National Gallery of Modern Art, New Delhi", "UNESCO — Shantiniketan inscribed 2023"],
+      imageUrl: "../shared/assets/timeline/nandalal.jpg",
+      imageCredit: "Wikimedia Commons, work by Nandalal Bose"
     },
     {
       id: "mysore",
@@ -787,7 +813,9 @@ const ART_DATA = {
       artMovement: "Mysore painting school — classical South Indian court painting tradition",
       motifs: "Hindu deities (Krishna, Radha, Dashavatara), court scenes, architectural backgrounds, gold-leaf detailing",
       artists: "Court painters of the Mysore Wodeyar dynasty; Sundarayya and his school",
-      sources: ["Jaganmohan Palace Art Gallery, Mysore", "National Museum, New Delhi"]
+      sources: ["Jaganmohan Palace Art Gallery, Mysore", "National Museum, New Delhi"],
+      imageUrl: "../shared/assets/timeline/nataraja.jpg",
+      imageCredit: "Wikimedia Commons, South Indian devotional bronze reference"
     },
     {
       id: "kalighat",
@@ -801,7 +829,9 @@ const ART_DATA = {
       artMovement: "Kalighat Pat — urban folk art tradition; precursor to modern Indian popular art",
       motifs: "Kali, Durga, Hindu deities, social satire (the anglicized Bengali gentleman), animals, flowers, bold outlines with wash colour",
       artists: "Kali Charan Ghosh, Nibaran Chandra Ghosh — among the few named Kalighat artists",
-      sources: ["Victoria & Albert Museum, London", "Indian Museum, Kolkata", "Jain, Jyotindra — Kalighat Painting, 1999"]
+      sources: ["Victoria & Albert Museum, London", "Indian Museum, Kolkata", "Jain, Jyotindra — Kalighat Painting, 1999"],
+      imageUrl: "../shared/assets/timeline/bharat-mata.jpg",
+      imageCredit: "Wikimedia Commons, Bengal School painting reference"
     },
     {
       id: "hampi",
@@ -815,7 +845,9 @@ const ART_DATA = {
       artMovement: "Vijayanagara art and architecture — synthesis of Dravidian and Deccan styles",
       motifs: "Stone chariots, musical pillars, rearing horses (yali), mythological narratives, Vaishnavite and Shaivite themes",
       artists: "Anonymous court-sponsored sculptors and architects of the Vijayanagara period",
-      sources: ["UNESCO World Heritage Centre", "Archaeological Survey of India", "Michell, George — Hampi Vijayanagara, 2001"]
+      sources: ["UNESCO World Heritage Centre", "Archaeological Survey of India", "Michell, George — Hampi Vijayanagara, 2001"],
+      imageUrl: "../shared/assets/timeline/konark.jpg",
+      imageCredit: "Wikimedia Commons, carved temple wheel reference"
     },
     {
       id: "kerala-murals",
@@ -829,7 +861,9 @@ const ART_DATA = {
       artMovement: "Kerala mural painting tradition — temple and palace painting of South-West India",
       motifs: "Vishnu, Shiva, Devi, Ramayana, Mahabharata, elaborate headdresses, large expressive eyes, floral borders",
       artists: "Anonymous temple painters; revival by contemporary artists like M.V. Vishnunamaboothiri",
-      sources: ["Mattancherry Palace Museum, Kochi", "Kerala State Department of Archaeology", "Government of Kerala Tourism"]
+      sources: ["Mattancherry Palace Museum, Kochi", "Kerala State Department of Archaeology", "Government of Kerala Tourism"],
+      imageUrl: "../shared/assets/timeline/ajanta.jpg",
+      imageCredit: "Wikimedia Commons, mural painting reference"
     },
     {
       id: "phad-region",
@@ -843,7 +877,9 @@ const ART_DATA = {
       artMovement: "Phad painting — narrative scroll painting tradition tied to oral performance",
       motifs: "Epic narratives of Pabuji and Devnarayan, horses, camels, battle scenes, village life, flat perspective with simultaneous narration",
       artists: "Shri Lal Joshi (Padma Shri awardee), Prakash Joshi — the Joshi family of Shahpura",
-      sources: ["National Handicrafts and Handlooms Museum, New Delhi", "Government of India — GI Tag for Phad Painting", "Kavita Singh — 'The Painted Scrolls of Rajasthan'"]
+      sources: ["National Handicrafts and Handlooms Museum, New Delhi", "Government of India — GI Tag for Phad Painting", "Kavita Singh — 'The Painted Scrolls of Rajasthan'"],
+      imageUrl: "../shared/assets/timeline/bani-thani.jpg",
+      imageCredit: "Wikimedia Commons, Rajasthani painting reference"
     },
     {
       id: "mumbai-modern",
@@ -857,7 +893,9 @@ const ART_DATA = {
       artMovement: "Progressive Artists' Group (1947) — modern and contemporary Indian art",
       motifs: "Varies by artist: figuration, abstraction, expressionism, geometric forms, Indian mythology, social commentary",
       artists: "F.N. Souza, S.H. Raza, M.F. Husain, Tyeb Mehta, V.S. Gaitonde, Akbar Padamsee",
-      sources: ["National Gallery of Modern Art, Mumbai", "Jehangir Art Gallery, Mumbai", "Dalmia, Yashodhara — The Making of Modern Indian Art: The Progressives, 2001"]
+      sources: ["National Gallery of Modern Art, Mumbai", "Jehangir Art Gallery, Mumbai", "Dalmia, Yashodhara — The Making of Modern Indian Art: The Progressives, 2001"],
+      imageUrl: "../shared/assets/timeline/husain.jpg",
+      imageCredit: "Wikimedia Commons, M. F. Husain reference"
     },
     {
       id: "assam-textile",
@@ -871,7 +909,9 @@ const ART_DATA = {
       artMovement: "Traditional Assamese textile art — silk weaving tradition",
       motifs: "Jaapi (traditional hat), Kolka (paisley), Gos phul (rhino motif), Phul (flower), geometric borders",
       artists: "Traditional weaving community of Sualkuchi",
-      sources: ["Government of Assam — Directorate of Handloom & Textiles", "National Institute of Design", "GI Tag for Muga Silk"]
+      sources: ["Government of Assam — Directorate of Handloom & Textiles", "National Institute of Design", "GI Tag for Muga Silk"],
+      imageUrl: "../shared/assets/map/pattachitra.jpg",
+      imageCredit: "Wikimedia Commons, textile-pattern reference"
     }
   ],
 
