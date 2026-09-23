@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Timeline — Kalāvṛtta · Indian Art Forms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="css/timeline.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__brand">
+      <span class="site-nav__title">Kalāvṛtta</span>
+      <span class="site-nav__subtitle">Indian Art Forms</span>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="document.querySelector('.site-nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="site-nav__links">
+      <li><a href="index.html" class="active">Timeline</a></li>
+      <li><a href="../art-map/index.html">Art Map</a></li>
+      <li><a href="../fusion/documentation/fusion-doc.html">Fusion</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <p class="hero__overline">CLA-I · Interactive Timeline</p>
+      <h1 class="hero__title">The Flow of Indian Art</h1>
+      <p class="hero__description">
+        Journey through 30,000 years of artistic expression on the Indian subcontinent — 
+        from prehistoric cave paintings to contemporary masterworks. Each artifact tells a story 
+        of creativity, belief, and cultural exchange.
+      </p>
+    </div>
+  </header>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar" role="toolbar" aria-label="Filter artifacts by category">
+    <div class="container">
+      <span class="filter-bar__label">Filter by Category:</span>
+      <div class="filter-bar__buttons" role="group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Painting">Painting</button>
+        <button class="filter-btn" data-filter="Sculpture">Sculpture</button>
+        <button class="filter-btn" data-filter="Architecture/Sculpture">Architecture</button>
+        <button class="filter-btn" data-filter="Seal">Seals</button>
+        <button class="filter-btn" data-filter="Decorative Art">Decorative Art</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Period Navigation (sidebar dots) -->
+  <nav class="period-nav" aria-label="Jump to period">
+    <ul id="period-nav-list"></ul>
+  </nav>
+
+  <!-- Timeline Container -->
+  <main class="timeline-container" id="timeline-container" role="main">
+    <div class="timeline-line" aria-hidden="true"></div>
+    <!-- Periods and artifacts rendered by JS -->
+  </main>
+
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="artifact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <div class="modal">
+      <button class="modal__close" aria-label="Close details" id="modal-close">&times;</button>
+      <div class="modal__image" id="modal-image"></div>
+      <div class="modal__body">
+        <div class="modal__tags" id="modal-tags"></div>
+        <h2 class="modal__title" id="modal-title"></h2>
+        <div class="modal__meta" id="modal-meta"></div>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sources Section -->
+  <section class="section section--alt" id="sources">
+    <div class="container container--narrow">
+      <h2>Sources &amp; References</h2>
+      <p>All historical information in this timeline has been compiled from authoritative institutional sources. Dates for ancient and medieval artifacts are approximate and based on commonly accepted scholarly ranges.</p>
+      <div class="sources-list">
+        <h4>Primary Institutional Sources</h4>
+        <ul>
+          <li>National Museum, New Delhi</li>
+          <li>Archaeological Survey of India (ASI)</li>
+          <li>UNESCO World Heritage Centre</li>
+          <li>Metropolitan Museum of Art, New York</li>
+          <li>British Museum, London</li>
+          <li>Victoria &amp; Albert Museum, London</li>
+          <li>National Gallery of Modern Art (NGMA), New Delhi</li>
+          <li>Sarnath Museum, ASI</li>
+          <li>Government Museum, Mathura</li>
+          <li>Government Museum, Chennai</li>
+          <li>Patna Museum / Bihar Museum</li>
+          <li>Freer Gallery of Art, Smithsonian Institution</li>
+        </ul>
+        <h4>Scholarly References</h4>
+        <ul>
+          <li>Huntington, Susan L. — <em>The Art of Ancient India</em>, 1985</li>
+          <li>Spink, Walter — <em>Ajanta: History and Development</em>, 2005–2014</li>
+          <li>Coomaraswamy, Ananda K. — <em>The Dance of Shiva</em>, 1918</li>
+          <li>Beach, Milo Cleveland — <em>The Imperial Image: Paintings for the Mughal Court</em>, 1981</li>
+          <li>Koch, Ebba — <em>Mughal Art and Imperial Ideology</em>, 2001</li>
+          <li>Archer, W.G. — <em>Indian Paintings from the Punjab Hills</em>, 1973</li>
+          <li>Dalmia, Yashodhara — <em>The Making of Modern Indian Art: The Progressives</em>, 2001</li>
+          <li>Guha-Thakurta, Tapati — <em>The Making of a New 'Indian' Art</em>, 1992</li>
+          <li>Possehl, G.L. — <em>The Indus Civilization: A Contemporary Perspective</em>, 2002</li>
+          <li>Marshall, John — <em>Mohenjo-daro and the Indus Civilization</em>, 1931</li>
+        </ul>
+      </div>
+      <p class="text-caption" style="margin-top: var(--space-6);">
+        <strong>Note on images:</strong> This educational project uses placeholder visuals. 
+        Where available, image URLs reference Wikimedia Commons (public domain / Creative Commons licensed). 
+        All image credits are documented in the artifact data.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__content">
+      <div>
+        <div class="site-footer__brand">Kalāvṛtta — Indian Art Forms</div>
+        <p class="site-footer__note">
+          Course 21LEM301T — Indian Art Form · CLA-I Assessment<br>
+          Interactive Timeline · Interactive Art Map · Regional Painting Fusion
+        </p>
+      </div>
+      <div class="site-footer__links">
+        <a href="index.html">Timeline</a>
+        <a href="../art-map/index.html">Art Map</a>
+        <a href="../fusion/documentation/fusion-doc.html">Fusion</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../shared/data/artData.js"></script>
+  <script src="js/timeline.js"></script>
+</body>
+</html>

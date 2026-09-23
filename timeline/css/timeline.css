@@ -1,0 +1,507 @@
+/* ============================================
+   INTERACTIVE TIMELINE — Styles
+   Vertical scrolling timeline with period sections
+   ============================================ */
+
+/* --- Filter Bar --- */
+.filter-bar {
+  position: sticky;
+  top: 57px;
+  z-index: 90;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: var(--space-3) 0;
+}
+
+.filter-bar .container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.filter-bar__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+}
+
+.filter-bar__buttons {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  padding: var(--space-2) var(--space-4);
+  border-radius: 100px;
+  background: var(--color-bg-alt);
+  color: var(--color-text-secondary);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background: var(--color-bg);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.filter-btn.active {
+  background: var(--color-indigo);
+  color: var(--color-text-inverse);
+  border-color: var(--color-indigo);
+}
+
+/* --- Period Navigation (sidebar dots) --- */
+.period-nav {
+  position: fixed;
+  right: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 80;
+}
+
+.period-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.period-nav__dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-border);
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 1px 3px var(--color-shadow);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.period-nav__dot:hover,
+.period-nav__dot.active {
+  transform: scale(1.4);
+}
+
+.period-nav__dot:hover .period-nav__label,
+.period-nav__dot.active .period-nav__label {
+  opacity: 1;
+  transform: translateX(-8px);
+  pointer-events: auto;
+}
+
+.period-nav__label {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(0);
+  white-space: nowrap;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-base);
+  margin-right: var(--space-2);
+}
+
+/* --- Timeline Container --- */
+.timeline-container {
+  position: relative;
+  padding: var(--space-8) 0 var(--space-16);
+  min-height: 60vh;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-border-light),
+    var(--color-ochre) 10%,
+    var(--color-terra) 30%,
+    var(--color-vermilion) 50%,
+    var(--color-indigo) 70%,
+    var(--color-sage) 90%,
+    var(--color-border-light)
+  );
+  transform: translateX(-50%);
+}
+
+/* --- Period Section --- */
+.period-section {
+  position: relative;
+  padding: var(--space-12) 0;
+  scroll-margin-top: 120px;
+}
+
+.period-section:nth-child(even) {
+  background-color: rgba(0,0,0,0.015);
+}
+
+/* Period Marker */
+.period-marker {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-10);
+}
+
+.period-marker__content {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-5) var(--space-8);
+  text-align: center;
+  max-width: 480px;
+  box-shadow: 0 4px 16px var(--color-shadow);
+  position: relative;
+}
+
+.period-marker__dot {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--color-surface);
+  box-shadow: 0 0 0 2px var(--color-border);
+}
+
+.period-marker__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.period-marker__dates {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-3);
+}
+
+.period-marker__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* --- Artifact Grid --- */
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* --- Artifact Card --- */
+.artifact-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.artifact-card:hover {
+  box-shadow: 0 6px 24px var(--color-shadow-md);
+  transform: translateY(-3px);
+}
+
+.artifact-card:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: 2px;
+}
+
+.artifact-card.hidden {
+  display: none;
+}
+
+.artifact-card__image {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.artifact-card__image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: var(--space-4);
+  position: relative;
+}
+
+.artifact-card__image-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+}
+
+.artifact-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artifact-card__body {
+  padding: var(--space-4) var(--space-5);
+}
+
+.artifact-card__category {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px var(--space-2);
+  border-radius: 3px;
+  margin-bottom: var(--space-2);
+}
+
+.artifact-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-primary);
+}
+
+.artifact-card__date {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+.artifact-card__location {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-1);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- No Results Message --- */
+.no-results {
+  text-align: center;
+  padding: var(--space-12);
+  color: var(--color-text-tertiary);
+  font-size: var(--text-lg);
+  display: none;
+}
+
+.no-results.visible {
+  display: block;
+}
+
+/* --- Modal Extensions --- */
+.modal__image {
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.modal__image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.6);
+}
+
+.modal__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__tags {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.modal__meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-4);
+}
+
+.modal__section {
+  margin-bottom: var(--space-5);
+}
+
+.modal__section-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.modal__sources {
+  list-style: none;
+  padding: 0;
+}
+
+.modal__sources li {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  padding: var(--space-1) 0;
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.modal__sources li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--color-ochre);
+}
+
+/* --- Sources Section --- */
+.sources-list h4 {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.sources-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sources-list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  padding: var(--space-1) 0;
+  padding-left: var(--space-5);
+  position: relative;
+  line-height: 1.6;
+}
+
+.sources-list li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--color-ochre);
+  font-size: 0.5em;
+  top: 0.7em;
+}
+
+/* --- Empty Period --- */
+.period-empty {
+  text-align: center;
+  padding: var(--space-6);
+  color: var(--color-text-tertiary);
+  font-style: italic;
+  font-size: var(--text-sm);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .timeline-line {
+    left: 24px;
+  }
+
+  .artifact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .period-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-bar .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .artifact-grid {
+    grid-template-columns: 1fr;
+    padding: 0 var(--space-4);
+  }
+
+  .period-marker__content {
+    padding: var(--space-4) var(--space-5);
+    margin: 0 var(--space-4);
+  }
+
+  .period-marker__name {
+    font-size: var(--text-lg);
+  }
+
+  .modal__image {
+    height: 180px;
+  }
+
+  .modal__meta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- Print --- */
+@media print {
+  .filter-bar,
+  .period-nav,
+  .timeline-line {
+    display: none !important;
+  }
+
+  .artifact-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .period-section {
+    break-before: page;
+  }
+}

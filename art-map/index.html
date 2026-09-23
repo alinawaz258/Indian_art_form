@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Art Map — Kalāvṛtta · Indian Art Forms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="css/art-map.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__brand">
+      <span class="site-nav__title">Kalāvṛtta</span>
+      <span class="site-nav__subtitle">Indian Art Forms</span>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="document.querySelector('.site-nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="site-nav__links">
+      <li><a href="../timeline/index.html">Timeline</a></li>
+      <li><a href="index.html" class="active">Art Map</a></li>
+      <li><a href="../fusion/documentation/fusion-doc.html">Fusion</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" style="padding: var(--space-12) 0 var(--space-8);">
+    <div class="container">
+      <p class="hero__overline">CLA-I · Interactive Art Map</p>
+      <h1 class="hero__title" style="font-size: var(--text-4xl);">The Geography of Indian Art</h1>
+      <p class="hero__description">
+        Explore how India's diverse geography shaped distinct art traditions — from Himalayan miniatures 
+        to coastal temple sculptures, tribal forest art to courtly painting ateliers.
+      </p>
+    </div>
+  </header>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar" role="toolbar" aria-label="Filter locations">
+    <div class="container">
+      <div class="filter-group">
+        <span class="filter-bar__label">Region:</span>
+        <div class="filter-bar__buttons" role="group">
+          <button class="filter-btn active" data-region="all">All</button>
+          <button class="filter-btn" data-region="North India">North</button>
+          <button class="filter-btn" data-region="South India">South</button>
+          <button class="filter-btn" data-region="East India">East</button>
+          <button class="filter-btn" data-region="Western India">West</button>
+          <button class="filter-btn" data-region="Central India">Central</button>
+          <button class="filter-btn" data-region="Northeast India">NE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content: Map + Info Panel -->
+  <main class="map-layout" role="main">
+    <!-- Map Panel -->
+    <div class="map-panel">
+      <div class="map-container" id="map-container">
+        <!-- SVG map rendered by JS -->
+      </div>
+      <div class="map-legend">
+        <span class="map-legend__title">Legend</span>
+        <span class="map-legend__item"><span class="map-legend__dot" style="background: var(--color-ochre);"></span> Art Location</span>
+        <span class="map-legend__item"><span class="map-legend__dot map-legend__dot--active"></span> Selected</span>
+      </div>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="info-panel" id="info-panel">
+      <div class="info-panel__header">
+        <h2 class="info-panel__title">Art Locations</h2>
+        <p class="info-panel__subtitle" id="location-count">20 locations across India</p>
+      </div>
+      <div class="info-panel__list" id="location-list">
+        <!-- Location cards rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="location-modal" role="dialog" aria-modal="true" aria-labelledby="loc-modal-title" tabindex="-1">
+    <div class="modal">
+      <button class="modal__close" id="loc-modal-close" aria-label="Close">&times;</button>
+      <div class="modal__header-bar" id="loc-modal-header"></div>
+      <div class="modal__body">
+        <h2 class="modal__title" id="loc-modal-title"></h2>
+        <div class="modal__meta" id="loc-modal-meta"></div>
+        <div id="loc-modal-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sources -->
+  <section class="section section--alt" id="sources">
+    <div class="container container--narrow">
+      <h2>Sources &amp; References</h2>
+      <p>Location and art tradition data compiled from authoritative institutional sources.</p>
+      <div class="sources-list">
+        <h4>Institutional Sources</h4>
+        <ul>
+          <li>UNESCO World Heritage Centre</li>
+          <li>Archaeological Survey of India (ASI)</li>
+          <li>National Museum, New Delhi</li>
+          <li>Victoria &amp; Albert Museum, London</li>
+          <li>Government of India — Ministry of Culture</li>
+          <li>Geographical Indications Registry of India</li>
+          <li>State Archaeology Departments</li>
+          <li>National Handicrafts &amp; Handlooms Museum, New Delhi</li>
+          <li>National Gallery of Modern Art (NGMA)</li>
+          <li>Calico Museum of Textiles, Ahmedabad</li>
+        </ul>
+        <h4>Scholarly References</h4>
+        <ul>
+          <li>Huntington, Susan L. — <em>The Art of Ancient India</em>, 1985</li>
+          <li>Michell, George — <em>Hampi Vijayanagara</em>, 2001</li>
+          <li>Archer, W.G. — <em>Indian Paintings from the Punjab Hills</em>, 1973</li>
+          <li>Randhawa, M.S. — <em>Kangra Paintings on Love</em>, 1962</li>
+          <li>Dalmia, Yashodhara — <em>The Making of Modern Indian Art</em>, 2001</li>
+          <li>Jain, Jyotindra — <em>Kalighat Painting</em>, 1999</li>
+        </ul>
+      </div>
+      <p class="text-caption" style="margin-top: var(--space-6);">
+        <strong>Note:</strong> The map outline is a simplified representation for educational purposes 
+        and is not intended as a cartographically precise boundary.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__content">
+      <div>
+        <div class="site-footer__brand">Kalāvṛtta — Indian Art Forms</div>
+        <p class="site-footer__note">
+          Course 21LEM301T — Indian Art Form · CLA-I Assessment<br>
+          Interactive Timeline · Interactive Art Map · Regional Painting Fusion
+        </p>
+      </div>
+      <div class="site-footer__links">
+        <a href="../timeline/index.html">Timeline</a>
+        <a href="index.html">Art Map</a>
+        <a href="../fusion/documentation/fusion-doc.html">Fusion</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../shared/data/artData.js"></script>
+  <script src="js/art-map.js"></script>
+</body>
+</html>

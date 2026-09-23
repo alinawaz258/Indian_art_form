@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalāvṛtta — Indian Art Forms · CLA-I Academic Submission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared/css/base.css">
+  <style>
+    /* Portal Specific Styles */
+    .portal-hero {
+      background: radial-gradient(circle at 50% 30%, #F5EFEB 0%, #EFE7DC 100%);
+      padding: var(--space-20) 0 var(--space-16);
+      text-align: center;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .portal-hero::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(194, 134, 58, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .portal-hero__badge {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: var(--space-1) var(--space-4);
+      border-radius: 100px;
+      background: rgba(46, 64, 87, 0.1);
+      color: var(--color-indigo);
+      margin-bottom: var(--space-4);
+      border: 1px solid rgba(46, 64, 87, 0.2);
+    }
+    .portal-hero__title {
+      font-size: 3.5rem;
+      font-family: var(--font-heading);
+      letter-spacing: -0.02em;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-3);
+    }
+    .portal-hero__sanskrit {
+      font-family: var(--font-heading);
+      font-style: italic;
+      color: var(--color-ochre);
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-6);
+    }
+    .portal-hero__lead {
+      max-width: 720px;
+      margin: 0 auto var(--space-8);
+      font-size: var(--text-lg);
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+    }
+
+    /* Meta Badges */
+    .portal-meta-bar {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      margin-top: var(--space-6);
+      padding-top: var(--space-6);
+      border-top: 1px solid rgba(44, 36, 24, 0.1);
+      font-size: var(--text-xs);
+      color: var(--color-text-tertiary);
+    }
+    .portal-meta-bar span {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .portal-meta-bar strong {
+      color: var(--color-text-primary);
+    }
+
+    /* Triad Grid */
+    .triad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8);
+      margin-top: calc(-1 * var(--space-10));
+      margin-bottom: var(--space-16);
+      position: relative;
+      z-index: 10;
+    }
+    .triad-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-8);
+      box-shadow: 0 10px 30px var(--color-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+    .triad-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--card-accent, var(--color-ochre));
+    }
+    .triad-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px var(--color-shadow-md);
+      border-color: var(--card-accent, var(--color-ochre));
+    }
+
+    .triad-card__tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--card-accent, var(--color-ochre));
+      margin-bottom: var(--space-2);
+    }
+    .triad-card__axis {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: var(--text-xs);
+      color: var(--color-text-tertiary);
+      margin-bottom: var(--space-4);
+      text-transform: uppercase;
+    }
+    .triad-card__title {
+      font-size: var(--text-2xl);
+      font-family: var(--font-heading);
+      margin-bottom: var(--space-3);
+      color: var(--color-text-primary);
+    }
+    .triad-card__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--space-6);
+      flex-grow: 1;
+    }
+    .triad-card__features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: var(--space-6);
+      font-size: var(--text-xs);
+      color: var(--color-text-tertiary);
+    }
+    .triad-card__features li {
+      padding: var(--space-1) 0;
+      border-bottom: 1px dashed var(--color-border-light);
+    }
+    .triad-card__features li:last-child {
+      border-bottom: none;
+    }
+
+    /* Academic Rubric Matrix */
+    .rubric-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-8);
+      margin-bottom: var(--space-16);
+    }
+
+    @media (max-width: 950px) {
+      .triad-grid {
+        grid-template-columns: 1fr;
+        margin-top: var(--space-8);
+      }
+      .portal-hero__title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__brand">
+      <span class="site-nav__title">Kalāvṛtta</span>
+      <span class="site-nav__subtitle">CLA-I University Submission</span>
+    </div>
+    <ul class="site-nav__links">
+      <li><a href="timeline/index.html">Interactive Timeline</a></li>
+      <li><a href="art-map/index.html">Interactive Art Map</a></li>
+      <li><a href="fusion/documentation/fusion-doc.html">Painting Fusion</a></li>
+      <li><a href="#assessment">Assessment Rubric</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="portal-hero">
+    <div class="container">
+      <span class="portal-hero__badge">University Academic Project · 30 Marks</span>
+      <h1 class="portal-hero__title">Kalāvṛtta</h1>
+      <p class="portal-hero__sanskrit">कला-वृत्त — The Wheel and Continuous Cycle of Indian Art</p>
+      <p class="portal-hero__lead">
+        A comprehensive digital exhibition and research repository addressing the <strong>CLA-I Assessment for 21LEM301T: Indian Art Form</strong>. 
+        Three integrated projects articulate the development of Indian art across <em>Time</em> (When), <em>Space</em> (Where), and <em>Synthesis</em> (Creative Union).
+      </p>
+
+      <div class="portal-meta-bar">
+        <span><strong>Course:</strong> 21LEM301T — Indian Art Form</span>
+        <span><strong>Assessment:</strong> CLA-I (Weightage: 30 Marks)</span>
+        <span><strong>Outcomes:</strong> CO1 (Timeline &amp; Map) + CO2 (Fusion)</span>
+        <span><strong>Status:</strong> Complete Academic Submission</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Triad Navigation -->
+  <main class="container">
+    <div class="triad-grid">
+      
+      <!-- Project 1: Timeline -->
+      <article class="triad-card" style="--card-accent: #C2863A;">
+        <div>
+          <span class="triad-card__tag">Project 1 · 10 Marks · CO1</span>
+          <div class="triad-card__axis">AXIS: TEMPORAL (WHEN)</div>
+          <h2 class="triad-card__title">Interactive Timeline</h2>
+          <p class="triad-card__desc">
+            Chronological journey across 10 historical epochs from 30,000 BCE to the contemporary era. Features 32 curated artifacts with high-resolution visual cards, category filters, and in-depth scholarly context.
+          </p>
+          <ul class="triad-card__features">
+            <li>✓ 10 Epochs: Prehistoric to Progressive Modernists</li>
+            <li>✓ Category filtering (Sculpture, Painting, Architecture, Seals)</li>
+            <li>✓ Deep museum provenance &amp; ASI citations</li>
+            <li>✓ 100% Client-side &amp; offline responsive</li>
+          </ul>
+        </div>
+        <a href="timeline/index.html" class="btn btn--primary" style="background: #C2863A; justify-content: center;">
+          Launch Timeline →
+        </a>
+      </article>
+
+      <!-- Project 2: Art Map -->
+      <article class="triad-card" style="--card-accent: #C44D32;">
+        <div>
+          <span class="triad-card__tag">Project 2 · 10 Marks · CO1</span>
+          <div class="triad-card__axis">AXIS: GEOGRAPHICAL (WHERE)</div>
+          <h2 class="triad-card__title">Interactive Art Map</h2>
+          <p class="triad-card__desc">
+            Geographic exploration of 20 pivotal art locations across 6 Indian zones. Custom vector cartography with bidirectional interaction between map markers, regional filtering, and architectural/craft traditions.
+          </p>
+          <ul class="triad-card__features">
+            <li>✓ 20 Key locations across North, South, East, West, Central, NE</li>
+            <li>✓ Zero-dependency custom SVG Indian cartography</li>
+            <li>✓ GI Tag records &amp; hereditary artisan lineages</li>
+            <li>✓ Synchronized coordinate pinpointing</li>
+          </ul>
+        </div>
+        <a href="art-map/index.html" class="btn btn--primary" style="background: #C44D32; justify-content: center;">
+          Launch Art Map →
+        </a>
+      </article>
+
+      <!-- Project 3: Fusion -->
+      <article class="triad-card" style="--card-accent: #2E4057;">
+        <div>
+          <span class="triad-card__tag">Project 3 · 10 Marks · CO2</span>
+          <div class="triad-card__axis">AXIS: SYNTHESIS (HARMONIZATION)</div>
+          <h2 class="triad-card__title">Painting Fusion</h2>
+          <p class="triad-card__desc">
+            Scholarly creative synthesis merging <strong>Madhubani (Mithila)</strong> and <strong>Gond Tribal Art</strong> through <em>Vriksha-Chaitanya</em> (The Cosmic Tree of Life). Includes motif explorer, pigment alchemy, and student manual.
+          </p>
+          <ul class="triad-card__features">
+            <li>✓ Original synthesis: Mithila geometry × Gond animism</li>
+            <li>✓ Digital concept artwork + 5-step student manual</li>
+            <li>✓ Systematic evaluation of 7 candidate fusion pairs</li>
+            <li>✓ Natural pigment hex analysis &amp; viva talking points</li>
+          </ul>
+        </div>
+        <a href="fusion/documentation/fusion-doc.html" class="btn btn--primary" style="background: #2E4057; justify-content: center;">
+          Explore Fusion Project →
+        </a>
+      </article>
+
+    </div>
+
+    <!-- Assessment Alignment Matrix -->
+    <section class="rubric-card" id="assessment">
+      <h2>CLA-I Assessment Alignment Matrix</h2>
+      <p style="margin-bottom: var(--space-6);">Demonstrating compliance with university academic criteria:</p>
+
+      <div class="comp-table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Assessment Component</th>
+              <th>Course Outcome</th>
+              <th>Max Marks</th>
+              <th>Official Requirement</th>
+              <th>Implemented Deliverable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Interactive Timeline</strong></td>
+              <td>CO1</td>
+              <td>10 Marks</td>
+              <td>Interactive digital timeline with virtual replicas/images of artifacts, clickable for detailed historical context.</td>
+              <td><a href="timeline/index.html">Interactive Timeline</a> with 32 artifacts across 10 epochs, dynamic category filtering, period quick-nav, and full modal scholarly dossier.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Interactive Art Map</strong></td>
+              <td>CO1</td>
+              <td>10 Marks</td>
+              <td>Interactive digital map highlighting key locations, art traditions, local movements, artists, and geographic influence.</td>
+              <td><a href="art-map/index.html">Interactive Art Map</a> with custom SVG India cartography, 20 pinpointed locations, regional grouping, and complete historical-craft monographs.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Regional Painting Fusion</strong></td>
+              <td>CO2</td>
+              <td>10 Marks</td>
+              <td>Creative synthesis combining elements from 2+ regional traditions, analyzing similarities/differences.</td>
+              <td><a href="fusion/documentation/fusion-doc.html">Vriksha-Chaitanya Project</a> fusing Madhubani &amp; Gond art, with concept artwork, 7-pair evaluation matrix, motif explorer, and 5-student execution blueprint.</td>
+            </tr>
+            <tr style="background: var(--color-bg-alt); font-weight: 700;">
+              <td><strong>TOTAL WEIGHTAGE</strong></td>
+              <td>CO1 + CO2</td>
+              <td>30 Marks</td>
+              <td colspan="2">Complete academic submission ready for viva voce defense and evaluation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Project Architecture & Offline Instructions -->
+    <section class="section" style="padding-top: 0;">
+      <h2>Architecture &amp; Local Verification</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);">
+        <div class="spec-card">
+          <h4>Zero-Dependency Philosophy</h4>
+          <p class="text-caption">Built using pure semantic <strong>HTML5, CSS3, and ES6 JavaScript</strong>. No npm builds, external database connections, paid APIs, or fragile map tile services are required. The entire suite runs directly from the local filesystem or any standard web server.</p>
+        </div>
+        <div class="spec-card">
+          <h4>Shared Data Layer</h4>
+          <p class="text-caption">Both the Timeline and Art Map are powered by a unified, verified dataset (<a href="shared/data/artData.js"><code>shared/data/artData.js</code></a>), ensuring consistent dates, terminology, museum citations, and geographic coordinates across interfaces.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__content">
+      <div>
+        <div class="site-footer__brand">Kalāvṛtta — Indian Art Forms</div>
+        <p class="site-footer__note">
+          Course 21LEM301T — Indian Art Form · CLA-I Assessment (30 Marks)<br>
+          Comprehensive Autonomous Academic Project
+        </p>
+      </div>
+      <div class="site-footer__links">
+        <a href="timeline/index.html">Timeline</a>
+        <a href="art-map/index.html">Art Map</a>
+        <a href="fusion/documentation/fusion-doc.html">Fusion</a>
+        <a href="timeline/index.html#sources">Sources</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regional Painting Fusion — Kalāvṛtta · Indian Art Forms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../shared/css/base.css">
+  <style>
+    /* Fusion Showcase Specific Styles */
+    .fusion-hero {
+      background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+      padding: var(--space-16) 0 var(--space-12);
+      border-bottom: 1px solid var(--color-border-light);
+      text-align: center;
+    }
+    .fusion-hero__badge {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: var(--space-1) var(--space-3);
+      border-radius: 100px;
+      background: rgba(194, 134, 58, 0.15);
+      color: var(--color-ochre);
+      margin-bottom: var(--space-4);
+    }
+    .fusion-hero__title {
+      font-size: var(--text-4xl);
+      max-width: 800px;
+      margin: 0 auto var(--space-4);
+    }
+    .fusion-hero__subtitle {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Artwork Showcase Grid */
+    .artwork-stage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: start;
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-16);
+    }
+    .artwork-frame {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius-lg);
+      padding: var(--space-4);
+      box-shadow: 0 10px 30px var(--color-shadow-md);
+      position: sticky;
+      top: 90px;
+    }
+    .artwork-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius);
+      display: block;
+      cursor: zoom-in;
+      transition: transform var(--transition-base);
+    }
+    .artwork-frame img:hover {
+      transform: scale(1.01);
+    }
+    .artwork-caption {
+      margin-top: var(--space-3);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--color-border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--text-xs);
+      color: var(--color-text-tertiary);
+    }
+
+    .artwork-details {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    .spec-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--border-radius-md);
+      padding: var(--space-6);
+      box-shadow: 0 2px 10px var(--color-shadow);
+    }
+    .spec-card__title {
+      font-size: var(--text-lg);
+      font-family: var(--font-heading);
+      margin-bottom: var(--space-3);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--color-text-primary);
+    }
+    .spec-card__title::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-ochre);
+    }
+
+    /* Interactive Motif Explorer */
+    .motif-pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+    .motif-pill {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      padding: var(--space-2) var(--space-3);
+      border-radius: 100px;
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .motif-pill:hover, .motif-pill.active {
+      background: var(--color-indigo);
+      color: var(--color-text-inverse);
+      border-color: var(--color-indigo);
+    }
+    .motif-detail-box {
+      background: var(--color-bg-alt);
+      border-radius: var(--border-radius);
+      padding: var(--space-4);
+      font-size: var(--text-sm);
+      line-height: 1.6;
+      border-left: 3px solid var(--color-ochre);
+    }
+
+    /* Comparison Table */
+    .comp-table-wrap {
+      overflow-x: auto;
+      margin: var(--space-6) 0;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--border-radius-md);
+      background: var(--color-surface);
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      text-align: left;
+    }
+    .comp-table th, .comp-table td {
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--color-border-light);
+    }
+    .comp-table th {
+      background: var(--color-bg-alt);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--color-text-primary);
+    }
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Color Swatches */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: var(--space-3);
+      margin-top: var(--space-3);
+    }
+    .swatch {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--border-radius);
+      padding: var(--space-2);
+      text-align: center;
+    }
+    .swatch__color {
+      height: 40px;
+      border-radius: 3px;
+      margin-bottom: var(--space-2);
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    .swatch__name {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 2px;
+    }
+    .swatch__hex {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--color-text-tertiary);
+    }
+
+    /* Process Flow */
+    .process-step {
+      display: flex;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+      align-items: flex-start;
+    }
+    .process-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-ochre);
+      color: var(--color-text-inverse);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .process-content h4 {
+      font-size: var(--text-sm);
+      margin-bottom: 2px;
+    }
+    .process-content p {
+      font-size: var(--text-xs);
+      margin-bottom: 0;
+      color: var(--color-text-secondary);
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4);
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: var(--border-radius);
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    }
+    .lightbox__close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    @media (max-width: 900px) {
+      .artwork-stage {
+        grid-template-columns: 1fr;
+      }
+      .artwork-frame {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="site-nav__brand">
+      <span class="site-nav__title">Kalāvṛtta</span>
+      <span class="site-nav__subtitle">Indian Art Forms</span>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="document.querySelector('.site-nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="site-nav__links">
+      <li><a href="../../timeline/index.html">Timeline</a></li>
+      <li><a href="../../art-map/index.html">Art Map</a></li>
+      <li><a href="fusion-doc.html" class="active">Fusion</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="fusion-hero">
+    <div class="container">
+      <span class="fusion-hero__badge">CLA-I · 10 Marks · CO2</span>
+      <h1 class="fusion-hero__title">Regional Painting Fusion: Samanvaya</h1>
+      <p class="fusion-hero__subtitle">
+        An academic creative synthesis of <strong>Madhubani (Mithila) Painting</strong> from Bihar and <strong>Gond Tribal Art</strong> from Madhya Pradesh — unified through the cosmic motif of the Tree of Life.
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Stage: Visual Display + Specs -->
+    <section class="artwork-stage">
+      
+      <!-- Frame with Image -->
+      <div class="artwork-frame">
+        <img src="../artwork/madhubani-gond-fusion.jpg" alt="Vriksha-Chaitanya: Madhubani and Gond Fusion Painting" id="fusion-img" onclick="openLightbox()">
+        <div class="artwork-caption">
+          <span>Click to view full-resolution lightbox</span>
+          <span class="tag tag--ochre">Concept Artwork</span>
+        </div>
+      </div>
+
+      <!-- Specs & Description -->
+      <div class="artwork-details">
+        
+        <div class="spec-card">
+          <h2 class="spec-card__title">Artwork Dossier: Vriksha-Chaitanya</h2>
+          <p style="font-size: var(--text-sm); margin-bottom: var(--space-3);">
+            <strong>Title:</strong> <em>Vriksha-Chaitanya</em> (Consciousness of the Cosmic Tree)<br>
+            <strong>Traditions Fused:</strong> Madhubani (Mithila) × Gond (Pardhan Adivasi)<br>
+            <strong>Regional Origin:</strong> Northern Bihar &amp; Eastern Madhya Pradesh<br>
+            <strong>Thematic Anchor:</strong> Ecological animism and the sacred continuum between water, earth, and sky.
+          </p>
+          <div class="alert-box" style="background: rgba(194,134,58,0.1); border-left: 3px solid var(--color-ochre); padding: var(--space-3); border-radius: var(--border-radius); font-size: var(--text-xs); color: var(--color-text-secondary);">
+            <strong>Academic Distinction:</strong> This visual represents the verified <em>digital concept artwork</em> generated to validate color harmonies and structural balance prior to manual student reproduction on 300 GSM handmade cotton paper.
+          </div>
+        </div>
+
+        <!-- Interactive Motif Explorer -->
+        <div class="spec-card">
+          <h3 class="spec-card__title">Interactive Motif Explorer</h3>
+          <p class="text-caption">Select an element to analyze its derivation and symbolic synthesis:</p>
+          
+          <div class="motif-pill-group">
+            <button class="motif-pill active" onclick="showMotif('tree')">Tree of Life (Central Axis)</button>
+            <button class="motif-pill" onclick="showMotif('fish')">Madhubani Aquatic Base</button>
+            <button class="motif-pill" onclick="showMotif('deer')">Gond Forest Guardian</button>
+            <button class="motif-pill" onclick="showMotif('birds')">Avian Messengers</button>
+            <button class="motif-pill" onclick="showMotif('border')">Integrated Border</button>
+          </div>
+
+          <div class="motif-detail-box" id="motif-display">
+            <strong>The Tree of Life (Axis Mundi):</strong> The central trunk serves as the metamorphic seam. The lower registers exhibit Madhubani geometric chevrons and double-line framing (*pari*), which transition organically into Gond's vertical, stippled tree bark texturing (*danna* and *chidri*).
+          </div>
+        </div>
+
+        <!-- Pigment Palette -->
+        <div class="spec-card">
+          <h3 class="spec-card__title">Natural Pigment &amp; Color Strategy</h3>
+          <p class="text-caption">Harmonizing the ritual primaries of Mithila with the luminous animist palette of Gond art:</p>
+          <div class="swatch-grid">
+            <div class="swatch">
+              <div class="swatch__color" style="background: #C44D32;"></div>
+              <div class="swatch__name">Sindoor Red</div>
+              <div class="swatch__hex">#C44D32 (Madhubani)</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch__color" style="background: #E8A838;"></div>
+              <div class="swatch__name">Turmeric Ochre</div>
+              <div class="swatch__hex">#E8A838 (Shared)</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch__color" style="background: #2E4057;"></div>
+              <div class="swatch__name">Indigo Blue</div>
+              <div class="swatch__hex">#2E4057 (Madhubani)</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch__color" style="background: #2BA0B5;"></div>
+              <div class="swatch__name">Peacock Cyan</div>
+              <div class="swatch__hex">#2BA0B5 (Gond)</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch__color" style="background: #5E9B48;"></div>
+              <div class="swatch__name">Forest Sap</div>
+              <div class="swatch__hex">#5E9B48 (Gond)</div>
+            </div>
+            <div class="swatch">
+              <div class="swatch__color" style="background: #1F1B18;"></div>
+              <div class="swatch__name">Kajal Black</div>
+              <div class="swatch__hex">#1F1B18 (Outlines)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Deep Academic Analysis & Evaluation Matrix -->
+    <section class="section" style="padding-top: 0;">
+      <h2>Comparative Stylistic Matrix</h2>
+      <p>Demonstrating how characteristics from each source tradition are rigorously preserved and unified:</p>
+
+      <div class="comp-table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Artistic Dimension</th>
+              <th>Madhubani (Mithila, Bihar)</th>
+              <th>Gond (Pardhan, MP)</th>
+              <th>Synthesized Outcome (Vriksha-Chaitanya)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primary Linework</strong></td>
+              <td>Crisp double parallel black outlines filled with fine cross-hatching (*kachni*).</td>
+              <td>Fluid, sinuous single contour lines holding internal repetitive dot/dash textures.</td>
+              <td>Double-line contours delineate primary compositional borders; sinuous contours guide the upper canopy.</td>
+            </tr>
+            <tr>
+              <td><strong>Internal Texturing</strong></td>
+              <td>Linear hatching, tiny parallel tick marks, solid flat fills (*bharni*).</td>
+              <td>Signature stippling (*tika*), rice-grain dashes (*danna*), and comb marks (*kanghi*).</td>
+              <td>Bifurcated texturing: left side features geometric *kachni* fills; right side features rhythmic Gond pointillism.</td>
+            </tr>
+            <tr>
+              <td><strong>Spatial Organization</strong></td>
+              <td>Strict two-dimensional planar structure; total aversion to empty space (*horror vacui*).</td>
+              <td>Buoyant, dynamic, anti-gravitational; forms float gracefully across the field.</td>
+              <td>Vertical cosmic hierarchy: grounded, densely patterned root pond rising into an airy, buoyant celestial canopy.</td>
+            </tr>
+            <tr>
+              <td><strong>Mythological Subject</strong></td>
+              <td>Aquatic fertility, *Matsya* (fish), *Kamala* (lotus), domestic blessings.</td>
+              <td>Forest fauna, sacred trees (*Mahua*, *Saja*), spirit animal companions.</td>
+              <td>The cosmic tree mediating between the subterranean waters of life and the celestial wild forest.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Physical Execution Guide for University Team -->
+    <section class="section section--alt" style="border-radius: var(--border-radius-lg); padding: var(--space-8); margin-bottom: var(--space-16);">
+      <h2>Student Team Physical Execution Blueprint</h2>
+      <p>Guidelines for the 5-member student team to translate this concept into an imperial-size physical artwork on paper:</p>
+
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-content">
+          <h4>Substrate &amp; Primer Preparation (Student 1)</h4>
+          <p>Mount 300 GSM cold-pressed handmade cotton paper (22" × 30"). Apply an aged-parchment wash using diluted yellow ochre and black tea to create a warm, organic background ground.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-content">
+          <h4>Cartographic Underdrawing (Student 2)</h4>
+          <p>Using 2H pencil, block out the central tree axis and the 1.5-inch border. Map out the aquatic zone (lower left) and forest meadow (lower right) ensuring mathematical equilibrium.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-content">
+          <h4>Madhubani Inking &amp; Double-Line Hatching (Student 3)</h4>
+          <p>Using 0.3 mm pigment fineliners, ink the fish, lotus blooms, and peacocks. Draw parallel double lines and fill with dense *kachni* cross-hatching.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div class="process-content">
+          <h4>Gond Stippling &amp; Dash Detailing (Student 4)</h4>
+          <p>Using 000 fine detail brushes, apply Gond's optical *bindu* dots and *danna* dashes inside the deer, tree branches, and flying songbirds in concentric rhythmic tracks.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-num">5</div>
+        <div class="process-content">
+          <h4>Color Infusion &amp; Harmonization (Student 5 / All)</h4>
+          <p>Apply gouache mineral pigments (vermilion, turmeric, indigo, peacock blue). Blend the central trunk where geometric bands merge into the dotted wood grain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Viva Defense Points -->
+    <section class="section">
+      <h2>Professor &amp; Viva Voce Defense Guide</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);">
+        <div class="spec-card">
+          <h4>Q: Why avoid the standard Warli + Kalamkari example?</h4>
+          <p class="text-caption"><strong>Defense:</strong> Warli + Kalamkari is explicitly cited in the syllabus. While valid, student implementations frequently devolve into pasting simplistic stick figures onto chintz backgrounds. Choosing Madhubani × Gond demonstrates independent scholarly initiative and creates a genuine challenge of merging two highly complex, pattern-heavy indigenous vocabularies.</p>
+        </div>
+        <div class="spec-card">
+          <h4>Q: How does this prove genuine synthesis?</h4>
+          <p class="text-caption"><strong>Defense:</strong> The artwork avoids a blunt split-screen division. The trunk functions as a metamorphic axis where Madhubani's horizontal geometric bands dissolve gradually into Gond's vertical stippled grains. Furthermore, the border fuses elements from both cultures, creating an integrated visual frame.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox__close" aria-label="Close Lightbox">&times;</button>
+    <img src="../artwork/madhubani-gond-fusion.jpg" alt="Vriksha-Chaitanya Enriched View" id="lightbox-img">
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__content">
+      <div>
+        <div class="site-footer__brand">Kalāvṛtta — Indian Art Forms</div>
+        <p class="site-footer__note">
+          Course 21LEM301T — Indian Art Form · CLA-I Assessment<br>
+          Interactive Timeline · Interactive Art Map · Regional Painting Fusion
+        </p>
+      </div>
+      <div class="site-footer__links">
+        <a href="../../timeline/index.html">Timeline</a>
+        <a href="../../art-map/index.html">Art Map</a>
+        <a href="fusion-doc.html">Fusion</a>
+        <a href="../../timeline/index.html#sources">Sources</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Motif Explorer Data
+    const motifData = {
+      tree: "<strong>The Tree of Life (Axis Mundi):</strong> The central trunk serves as the metamorphic seam. The lower registers exhibit Madhubani geometric chevrons and double-line framing (*pari*), which transition organically into Gond's vertical, stippled tree bark texturing (*danna* and *chidri*).",
+      fish: "<strong>Madhubani Aquatic Base:</strong> The paired fish (*Matsya*) and blooming lotuses (*Kamala*) symbolize generative fertility, pristine water, and auspicious beginnings in Mithila folklore. Rendered with double-line outlines and intricate diagonal cross-hatching (*kachni*).",
+      deer: "<strong>Gond Forest Guardian:</strong> The antlered deer (*Hiran*) represents the benevolent forest spirits of Central India's Gondwana highlands. Its body is rendered with fluid, rounded contours filled with concentric stippled dots (*bindu*) and vibrant saffron yellow.",
+      birds: "<strong>Avian Messengers:</strong> Birds in both idioms perch upon the boughs. On the left, Madhubani peacocks feature stylized eye-tail feathers and profile eyes; on the right, Gond birds showcase morphing feather wings that dissolve into leaf patterns.",
+      border: "<strong>Integrated Border System:</strong> The outer border fuses Madhubani's geometric teeth (*daant*) and chevron triangles on the perimeter with Gond's rhythmic water-wave bands on the interior track, framing the cosmos harmoniously."
+    };
+
+    function showMotif(key) {
+      document.querySelectorAll('.motif-pill').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('motif-display').innerHTML = motifData[key];
+    }
+
+    function openLightbox() {
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
